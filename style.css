@@ -1,0 +1,195 @@
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 500px;
+            background: white;
+            padding: 30px;
+            border-radius: 20px;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            text-align: center;
+            color: #888;
+            margin-bottom: 25px;
+        }
+
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        #taskInput {
+            flex: 1;
+            min-width: 0;
+            padding: 14px;
+            border: 2px solid #eee;
+            border-radius: 10px;
+            outline: none;
+            font-size: 16px;
+        }
+
+        #taskInput:focus {
+            border-color: #667eea;
+        }
+
+        #addButton {
+            padding: 14px 18px;
+            background: #667eea;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: 0.2s;
+        }
+
+        #addButton:hover {
+            background: #5265d4;
+        }
+
+        .filters {
+            display: flex;
+            gap: 8px;
+            margin-bottom: 20px;
+        }
+
+        .filter {
+            flex: 1;
+            padding: 10px 5px;
+            border: none;
+            border-radius: 8px;
+            background: #f1f1f1;
+            cursor: pointer;
+            color: #555;
+            transition: 0.2s;
+        }
+
+        .filter.active {
+            background: #667eea;
+            color: white;
+        }
+
+        #taskList {
+            list-style: none;
+        }
+
+        .task {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 15px;
+            margin-bottom: 10px;
+            background: #f8f9ff;
+            border-radius: 10px;
+            animation: appear 0.2s ease;
+        }
+
+        @keyframes appear {
+            from {
+                opacity: 0;
+                transform: translateY(-5px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .task input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #667eea;
+            cursor: pointer;
+            flex-shrink: 0;
+        }
+
+        .task-text {
+            flex: 1;
+            overflow-wrap: anywhere;
+            color: #333;
+        }
+
+        .task.completed .task-text {
+            text-decoration: line-through;
+            color: #aaa;
+        }
+
+        .delete-button {
+            border: none;
+            background: transparent;
+            color: #ff5b6b;
+            font-size: 20px;
+            cursor: pointer;
+            padding: 3px 6px;
+        }
+
+        .delete-button:hover {
+            color: #d92338;
+        }
+
+        .empty-message {
+            text-align: center;
+            padding: 25px 10px;
+            color: #aaa;
+        }
+
+        .footer {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 10px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+            color: #888;
+            font-size: 14px;
+        }
+
+        #clearCompleted {
+            border: none;
+            background: transparent;
+            color: #667eea;
+            cursor: pointer;
+            font-size: 14px;
+        }
+
+        #clearCompleted:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 400px) {
+            .container {
+                padding: 20px;
+            }
+
+            #addButton {
+                padding: 12px;
+            }
+
+            .filter {
+                font-size: 12px;
+            }
+        }

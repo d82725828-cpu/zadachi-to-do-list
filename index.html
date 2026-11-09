@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-Do List | Мои задачи</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <main class="container">
+        <h1>📝 Мои задачи</h1>
+        <p class="subtitle">Планируй день и достигай целей!</p>
+
+        <form class="input-group" id="taskForm">
+            <input
+                type="text"
+                id="taskInput"
+                placeholder="Введите новую задачу..."
+                maxlength="200"
+                autocomplete="off"
+                aria-label="Новая задача"
+            >
+            <button type="submit" id="addButton">Добавить</button>
+        </form>
+
+        <div class="filters">
+            <button class="filter active" data-filter="all">Все</button>
+            <button class="filter" data-filter="active">Активные</button>
+            <button class="filter" data-filter="completed">Выполненные</button>
+        </div>
+
+        <ul id="taskList"></ul>
+
+        <div class="footer">
+            <span id="taskCounter">Осталось задач: 0</span>
+            <button id="clearCompleted">Удалить выполненные</button>
+        </div>
+    </main>
+
+<script src="app.js"></script>
+
+</body>
+</html>
